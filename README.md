@@ -103,7 +103,6 @@ It is one of the most detailed modules in the system due to its operational and 
 You can view the full specification of the parking requirements in:  
 **`docs/parking-requirements.pdf`**
 
----
 
 ### 🚗 Module Description
 
