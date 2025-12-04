@@ -37,7 +37,7 @@ Includes database connectors, JSON managers, error handling, and common value ob
 ## 🧩 Hexagonal Architecture Diagram
 
 
-![Hexagonal Architecture](./hexa.png)
+![Hexagonal Architecture](docs/hexa.png)
 
 
 > **Note:** The diagram shows the structure of Domain, Application, and Infrastructure, along with Driver/Driven ports and adapters.
@@ -54,6 +54,32 @@ In addition to this architecture, the system incorporates several **software des
 - **Singleton Pattern** for database connectors and shared resources  
 
 ---
+## 🎬 Movies Module
+
+The **Movies Hexagon** is responsible for managing all movie-related information for the cinema system.  
+It combines **local movie data** with external information fetched from **SWAPI (Star Wars API)**, allowing enriched movie records that include titles, characters, and additional metadata.
+
+---
+
+### 🧩 Movies Diagram
+
+Below is the class diagram representing the internal structure of the Movies module:
+
+![Movies Domain Diagram](docs/movies-diagram.jpg)
+
+Here we can observe the **Movies domain**, with its attributes such as **title**, **synopsis**, **release date**, **genre**, **classification**, **director**, **main cast**, and others.  
+The diagram also shows the definition of the corresponding **Domain Port**, the **Use Case** that implements this port, and the **Controller**, which uses the use case through the port to expose functionality to the API.
+
+---
+
+### 🔌 Available Endpoints (base: `/movies-data`)
+
+- **GET /movie/:id** → Retrieve a movie by its ID  
+- **POST /movie** → Create a new movie  
+- **GET /list/:idList** → Retrieve a movie list by list ID  
+- **GET /list/** → Search for movies using filters (`title`, `type`, `year`, etc.)
+
+
 
 # 📘 Functionalities Implemented
 
