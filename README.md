@@ -1,22 +1,53 @@
-# 🚗 Parking Management System – Hexagonal Architecture (Ports & Adapters)
+# 🎬 Cinema Management API – Hexagonal Architecture (Ports & Adapters)
 
-This project implements a **Parking Management System** following a strict **Hexagonal Architecture** (Ports & Adapters).  
-The system was developed based on the functional requirements designed for the automated parking solution of Movies UPB, a fictional cinema created for academic purposes.
+This project is a modular **Cinema Management API** developed in **TypeScript**, using **Express** as the web framework.  
+The system integrates both **SQL database storage** and **local JSON persistence**, and additionally consumes external data from **SWAPI (Star Wars API)** for movie-related information.
+
+The application is structured using a strict **Hexagonal Architecture** (Ports & Adapters), ensuring high separation of concerns, independence from frameworks, strong modularity, and maintainability.  
+The system is divided into **four functional hexagons**, plus a dedicated **API hexagon** responsible for all external communication, and a **Shared Module** that provides utilities and components reused across all hexagons.
+
+---
+
+## 🧱 Hexagons Overview
+
+### **1. Parking Hexagon**
+Handles everything related to the cinema's parking system, including vehicle entry, exit, billing calculation, client benefits, and daily revenue reporting.
+
+### **2. Movies Hexagon**
+Manages movie information. It handles local movie storage and also integrates external data sources such as **SWAPI** to fetch film details, characters, and related metadata.
+
+### **3. Inventory Hexagon**
+Responsible for managing inventory items such as food, merchandise, or products sold at the cinema.  
+Supports stock checking, item creation, and reservation handling.
+
+### **4. Customer Hexagon**
+Handles customer registration, lookup, and identification for benefits such as free parking or personalized services.  
+Uses JSON-based local persistence.
+
+### **5. API Hexagon**
+Serves as the communication layer between the outside world and the system.  
+Contains all Express routing, controllers, and transport-level logic, acting as the **Driver Adapter** for incoming HTTP requests.
+
+### **6. Shared Module**
+A cross-cutting module containing reusable utilities, domain abstractions, and infrastructure helpers shared by all hexagons.  
+Includes database connectors, JSON managers, error handling, and common value objects.
+
+---
+
+## 🧩 Hexagonal Architecture Diagram
+
+
+![Hexagonal Architecture](./hexa.png)
+
+
+> **Note:** The diagram shows the structure of Domain, Application, and Infrastructure, along with Driver/Driven ports and adapters.
+
 The architecture ensures **high modularity**, **easy testability**, and **clear separation of concerns** across the three main layers:
 
 - **Domain**: Core business logic and entities  
 - **Application**: Services and Use Cases (Driver Ports)  
 - **Infrastructure**: Controllers, repositories, database, and adapters (Driven Ports)
 
----
-
-## 🧱 Architecture Diagram
-
-Below is the conceptual model used for the project:
-
-![Hexagonal Architecture](./hexa.png)
-
-> **Note:** The diagram shows the structure of Domain, Application, and Infrastructure, along with Driver/Driven ports and adapters.
 
 ---
 
