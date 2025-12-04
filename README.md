@@ -48,6 +48,10 @@ The architecture ensures **high modularity**, **easy testability**, and **clear 
 - **Application**: Services and Use Cases (Driver Ports)  
 - **Infrastructure**: Controllers, repositories, database, and adapters (Driven Ports)
 
+In addition to this architecture, the system incorporates several **software design patterns**, such as:  
+- **Factory Pattern** for constructing complex objects  
+- **Nullable Object Pattern** for safe fallback instances  
+- **Singleton Pattern** for database connectors and shared resources  
 
 ---
 
