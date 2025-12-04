@@ -1,8 +1,7 @@
 # 🚗 Parking Management System – Hexagonal Architecture (Ports & Adapters)
 
 This project implements a **Parking Management System** following a strict **Hexagonal Architecture** (Ports & Adapters).  
-The system was developed based on the functional requirements provided for the *Movies UPB* automated parking solution.
-
+The system was developed based on the functional requirements designed for the automated parking solution of Movies UPB, a fictional cinema created for academic purposes.
 The architecture ensures **high modularity**, **easy testability**, and **clear separation of concerns** across the three main layers:
 
 - **Domain**: Core business logic and entities  
